@@ -7,7 +7,9 @@ export const getUser = (req, res) => {
       console.error("Error in getting user");
       return res.status(500).json({ message: "Failed in getting user" });
     }
-    res.send(result);
-    res.status(200).json({ mesage: "successfull in getting user" });
+
+    return res
+      .status(200)
+      .json({ mesage: "successfull in getting user", data: result });
   });
 };
